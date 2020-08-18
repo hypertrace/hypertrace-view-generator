@@ -24,8 +24,6 @@ import org.hypertrace.core.serviceframework.metrics.PlatformMetricsRegistry;
 import org.hypertrace.core.viewgenerator.JavaCodeBasedViewGenerator;
 import org.hypertrace.traceenricher.enrichedspan.constants.EnrichedSpanConstants;
 import org.hypertrace.traceenricher.enrichedspan.constants.v1.CommonAttribute;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Pre-processing for View Generators, for data that are mostly needed by the the view generators
@@ -33,7 +31,6 @@ import org.slf4j.LoggerFactory;
 public abstract class BaseViewGenerator<OUT extends GenericRecord>
     implements JavaCodeBasedViewGenerator<StructuredTrace, OUT> {
 
-  private static Logger LOGGER = LoggerFactory.getLogger(BaseViewGenerator.class);
   private static final String VIEW_GENERATION_ARRIVAL_LAG = "viewgeneration.arrival.lag";
   private static final Timer viewGeneratorArrivalTimer = PlatformMetricsRegistry
       .registerTimer(VIEW_GENERATION_ARRIVAL_LAG, new HashMap<>());
