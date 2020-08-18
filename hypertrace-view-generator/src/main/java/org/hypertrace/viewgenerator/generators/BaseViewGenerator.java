@@ -34,7 +34,7 @@ public abstract class BaseViewGenerator<OUT extends GenericRecord>
     implements JavaCodeBasedViewGenerator<StructuredTrace, OUT> {
 
   private static Logger LOGGER = LoggerFactory.getLogger(BaseViewGenerator.class);
-  private static final String VIEW_GENERATION_ARRIVAL_LAG = "view.generation.arrival.lag";
+  private static final String VIEW_GENERATION_ARRIVAL_LAG = "viewgeneration.arrival.lag";
   private static final Timer viewGeneratorArrivalTimer = PlatformMetricsRegistry
       .registerTimer(VIEW_GENERATION_ARRIVAL_LAG, new HashMap<>());
 
