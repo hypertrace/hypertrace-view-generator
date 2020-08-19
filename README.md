@@ -4,7 +4,7 @@
 
 [![CircleCI](https://circleci.com/gh/hypertrace/hypertrace-view-generator.svg?style=svg)](https://circleci.com/gh/hypertrace/hypertrace-view-generator)
 
-This repo provides two jobs: *1) Hypertrace view creator job 2) Hypertrace view generator job*
+This repository contains: *1) Hypertrace view creator job 2) Hypertrace view generation service*
 
 Hypertrace view creator:
 It is a bootstrap job that creates required views in pinot like spanEventView, backendEntityView, etc - 
