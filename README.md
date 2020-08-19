@@ -7,7 +7,7 @@
 This repo provides two jobs: *1) Hypertrace view creator job 2) Hypertrace view generator job*
 
 Hypertrace view creator:
-It is a bootstrap job that creates require views in pinot like spanEventView, backendEntityView, etc - 
+It is a bootstrap job that creates required views in pinot like spanEventView, backendEntityView, etc - 
 
 Hypertrace view generator: 
 It is a streaming job that materializes enriched traces into pinot views
