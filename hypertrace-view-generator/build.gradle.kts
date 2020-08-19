@@ -11,17 +11,27 @@ application {
   mainClassName = "org.hypertrace.core.serviceframework.PlatformServiceLauncher"
 }
 
+hypertraceDocker {
+  defaultImage {
+    javaApplication {
+      serviceName.set("all-views")
+      adminPort.set(8099)
+    }
+  }
+}
+
 tasks.test {
   useJUnitPlatform()
 }
 
 dependencies {
   implementation(project(":hypertrace-view-generator-api"))
-  implementation("org.hypertrace.core.viewgenerator:view-generator-framework:0.1.7")
-  implementation("org.hypertrace.core.datamodel:data-model:0.1.2")
+  implementation("org.hypertrace.core.viewgenerator:view-generator-framework:0.1.8")
+  implementation("org.hypertrace.core.datamodel:data-model:0.1.3")
+  implementation("org.hypertrace.core.serviceframework:platform-metrics:0.1.8")
 
   implementation("org.hypertrace.traceenricher:enriched-span-constants:0.1.3")
-  implementation("org.hypertrace.traceenricher:hypertrace-trace-enricher-api:0.1.3")
+  implementation("org.hypertrace.traceenricher:hypertrace-trace-enricher-api:0.1.15")
   implementation("org.hypertrace.core.spannormalizer:raw-span-constants:0.1.5")
   implementation("org.hypertrace.entity.service:entity-service-api:0.1.3")
 
