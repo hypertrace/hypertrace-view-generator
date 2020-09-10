@@ -6,28 +6,18 @@ metadata:
     release: {{ .Release.Name }}
 data:
   application.conf: |-
-    flink.job {
-      metrics {
-        metrics {
-          reporters = {{ .Values.viewGeneratorServiceConfig.flink.job.metrics.reporters | quote}}
-        }
-      }
+    kafka.streams.config {
+      application.id = all-view-generators-job
+      metrics.recording.level = "{{ .Values.viewGeneratorServiceConfig.kafka.streams.config.metricsRecordingLevel }}"
+      num.stream.threads = "{{ .Values.viewGeneratorServiceConfig.kafka.streams.config.numStreamThreads }}"
+      producer.compression.type = gzip
+      topology.optimization = all
+      bootstrap.servers = "{{ .Values.viewGeneratorServiceConfig.kafka.streams.config.bootstrapServers }}"
+      auto.offset.reset = "latest"
+      auto.commit.interval.ms = 5000
     }
 
-    flink.source {
-      schema.registry {
-        schema.registry.url = "http://schema-registry-service:8081"
-      }
-      kafka {
-        bootstrap.servers = "bootstrap:9092"
-      }
-    }
-
-    flink.sink {
-      schema.registry {
-        schema.registry.url = "http://schema-registry-service:8081"
-      }
-      kafka {
-        bootstrap.servers = "bootstrap:9092"
-      }
+    schema.registry.config {
+      schema.registry.url = "{{ .Values.viewGeneratorServiceConfig.schema.registry.config.schemaRegistryUrl }}"
+      specific.avro.reader = true
     }

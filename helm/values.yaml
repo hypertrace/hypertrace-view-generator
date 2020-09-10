@@ -14,13 +14,13 @@ replicaCount: 1
 maxUnavailable: 0
 
 images:
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   creator:
     repository: hypertrace/hypertrace-view-creator
   generator:
     repository: hypertrace/hypertrace-view-generator
 
-imagePullSecrets: []
+imagePullSecrets: [name: regcred-dev]
 
 containerAdminPort: 8099
 
@@ -37,10 +37,16 @@ logConfig:
 
 viewGeneratorServiceConfig:
   name: view-generation-service-config
-  flink:
-    job:
-      metrics:
-        reporters: "prometheus"
+  kafka:
+    streams:
+      config:
+        metricsRecordingLevel: INFO
+        numStreamThreads: 2
+        bootstrapServers: "bootstrap:9092"
+  schema:
+    registry:
+      config:
+        schemaRegistryUrl: "http://schema-registry-service:8081"
 
 viewCreatorJobConfig:
   name: view-creator-job-config
