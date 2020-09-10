@@ -6,12 +6,6 @@
 
 This repository contains Hypertrace view creator bootstrap job and Hypertrace view generation streaming job.
 
-Hypertrace view creator:
-It is a bootstrap job that creates required views in pinot like spanEventView, backendEntityView, etc.
-
-Hypertrace view generator: 
-It is a streaming job that materializes enriched traces into pinot views
-
 ## Description
 
 | ![space-1.jpg](https://hypertrace-docs.s3.amazonaws.com/ingestion-pipeline.png) | 
