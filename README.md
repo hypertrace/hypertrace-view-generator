@@ -35,7 +35,7 @@ Run `./gradlew test` to execute unit tests.
 You can test the image you built after modification by running docker-compose or helm setup. 
 
 #### docker-compose
-Change the tag for `hypertrace-view-generatorr ` from `:main` to `:test` in [docker-compose file](https://github.com/hypertrace/hypertrace/blob/main/docker/docker-compose.yml) like this.
+Change the tag for `hypertrace-view-generator ` from `:main` to `:test` in [docker-compose file](https://github.com/hypertrace/hypertrace/blob/main/docker/docker-compose.yml) like this.
 
 ```yaml
   hypertrace-view-generator:
