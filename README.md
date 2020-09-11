@@ -16,7 +16,6 @@ Hypertrace view creator is a bootstrap job that runs once and creates required v
 
 Ones this views are there in pinot, Hypertrace view generator takes enriched traces which [Hypertrace trace enricher](https://github.com/hypertrace/hypertrace-trace-enricher) pushed to kafka and materializes them into pinot views. 
 
-For example, Let's say we got a trace with 50 attributes After enrichement by Hypertrace trace enricher and `spanEventView` only needs 10 attributes so Hypertrace view generator will fill that view with only those 10 attributes.
 
 ## Building locally
 `hypertrace-view-generator` uses gradlew to compile/install/distribute. Gradle wrapper is already part of the source code. To build `hypertrace-view-generator`, run:
