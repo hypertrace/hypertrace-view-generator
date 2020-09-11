@@ -14,7 +14,7 @@ This repository contains Hypertrace view creator bootstrap job and Hypertrace vi
 
 Hypertrace view creator is a bootstrap job that runs once and creates required views in pinot -  `spanEventView`, `serviceCallView`, `backendEntityView`, `rawServiceView`, `rawTraceView`.
 
-Ones this views are there in pinot, Hypertrace view generator takes enriched traces which [Hypertrace trace enricher](https://github.com/hypertrace/hypertrace-trace-enricher) pushed to kafka and materializes them into pinot views. 
+Once these views are there in pinot, Hypertrace view generator consumes(from kafka) enriched traces produced by [Hypertrace trace enricher](https://github.com/hypertrace/hypertrace-trace-enricher), applies required filters, transformations and then materializes them into pinot views. 
 
 
 ## Building locally
