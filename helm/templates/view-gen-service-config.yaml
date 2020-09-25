@@ -10,11 +10,6 @@ data:
       application.id = all-view-generators-job
       metrics.recording.level = "{{ .Values.viewGeneratorServiceConfig.kafka.streams.config.metricsRecordingLevel }}"
       num.stream.threads = "{{ .Values.viewGeneratorServiceConfig.kafka.streams.config.numStreamThreads }}"
-      producer.compression.type = gzip
-      topology.optimization = all
       bootstrap.servers = "{{ .Values.viewGeneratorServiceConfig.kafka.streams.config.bootstrapServers }}"
-      auto.offset.reset = "latest"
-      auto.commit.interval.ms = 5000
       schema.registry.url = "{{ .Values.viewGeneratorServiceConfig.kafka.streams.config.schemaRegistryUrl }}"
-      specific.avro.reader = true
     }

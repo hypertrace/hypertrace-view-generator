@@ -31,8 +31,7 @@ spec:
     {{- end }}
       containers:
         - name: {{ .Values.allViews.creator.jobName }}
-          #image: "{{ .Values.images.creator.repository }}:{{ .Chart.AppVersion }}"
-          image: traceableai-docker-dev.jfrog.io/hypertrace/hypertrace-view-creator:0.1.16-SNAPSHOT
+          image: "{{ .Values.images.creator.repository }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.images.pullPolicy }}
           resources:
             {{- toYaml .Values.allViews.creator.resources | nindent 12 }}
