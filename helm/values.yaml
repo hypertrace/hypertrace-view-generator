@@ -14,13 +14,13 @@ replicaCount: 1
 maxUnavailable: 0
 
 images:
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
   creator:
     repository: hypertrace/hypertrace-view-creator
   generator:
     repository: hypertrace/hypertrace-view-generator
 
-imagePullSecrets: [name: regcred-dev]
+imagePullSecrets: []
 
 containerAdminPort: 8099
 
