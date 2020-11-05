@@ -28,12 +28,12 @@ dependencies {
   implementation(project(":hypertrace-view-generator-api"))
 
   implementation("org.hypertrace.core.viewgenerator:view-generator-framework:0.1.16")
-  implementation("org.hypertrace.core.datamodel:data-model:0.1.9")
-  implementation("org.hypertrace.core.serviceframework:platform-metrics:0.1.15")
+  implementation("org.hypertrace.core.datamodel:data-model:0.1.10")
+  implementation("org.hypertrace.core.serviceframework:platform-metrics:0.1.16")
 
-  implementation("org.hypertrace.traceenricher:enriched-span-constants:0.1.23")
-  implementation("org.hypertrace.traceenricher:hypertrace-trace-enricher-api:0.1.23")
-  implementation("org.hypertrace.core.spannormalizer:raw-span-constants:0.1.22")
+  implementation("org.hypertrace.traceenricher:enriched-span-constants:0.2.0")
+  implementation("org.hypertrace.traceenricher:hypertrace-trace-enricher-api:0.2.0")
+  implementation("org.hypertrace.core.spannormalizer:raw-span-constants:0.2.2")
   implementation("org.hypertrace.entity.service:entity-service-api:0.1.21")
 
   implementation("org.apache.avro:avro:1.9.2")
